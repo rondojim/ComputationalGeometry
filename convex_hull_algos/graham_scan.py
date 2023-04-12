@@ -1,11 +1,14 @@
-import utilities.geometry_utils as geom
+import sys
+sys.path.append('../')
+
+from utilities import geometry_utils as geom
+
 
 # computes convex hull of points using graham scan algorithm
 
 
 def Graham_scan(points):
-
-    # set start of the convex hull as the lowest left point
+    # set start of the convex hull as the most left and lowest point
     origin = min(points)
     print(origin)
     # sort the points by slope around origin in counter-clockwise order
