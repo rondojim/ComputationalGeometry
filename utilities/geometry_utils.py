@@ -4,8 +4,6 @@ import math
 # -1 -> clockwise
 # 0 -> colinear
 # 1 -> counter-clockwise
-
-
 def orientation(p, q, r):
     cross_product = (q[0] - p[0]) * (r[1] - p[1]) - \
         (q[1] - p[1]) * (r[0] - p[0])
@@ -15,8 +13,6 @@ def orientation(p, q, r):
 
 # returns the slope of the line defined by point p and q
 # if points are colinear 'inf' is returned
-
-
 def slope(p, q):
     dx = float(q[0] - p[0])
     dy = float(q[1] - p[1])
