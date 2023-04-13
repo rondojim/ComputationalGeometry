@@ -3,11 +3,19 @@ import matplotlib.pyplot as plt
 
 # creates a set of N random points in [lb, ub] x [lb, ub]
 #       with integer coordinates
-def random_point_set(N, lb, ub):
+def random_point_set(N, lb, ub, no_same_X):
     points_set = set()
+    Xs = set()
 
     while len(points_set) < N:
-        points_set.add((random.randint(lb, ub), random.randint(lb, ub)))
+        x = random.randint(lb, ub)
+        y = random.randint(lb, ub)
+
+        if no_same_X == True and (x in Xs):
+            continue
+
+        points_set.add((x, y))
+        Xs.add(x)
 
     return list(points_set)
 
