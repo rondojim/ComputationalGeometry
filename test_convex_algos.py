@@ -28,7 +28,7 @@ def test_divide_and_conquer():
 
 
 def test_quick_hull():
-    points = tut.random_point_set(80, 0, 1000, False)
+    points = tut.random_collinear(80, 0, 1000, 0)
     convex_hull = qh.Quick_hull(points)
 
     tut.plot_convex_hull(points, convex_hull, "Quick Hull")
