@@ -20,3 +20,5 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
 
   <p align="justify">
   </p>
+
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/JarvisDemo.gif)
