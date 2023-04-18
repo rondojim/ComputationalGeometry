@@ -5,8 +5,6 @@ from utilities import geometry_utils as geom
 
 
 def find_hull(S, P, Q, convex_hull):
-    print(f"Finding hull on:\nS: {S}\nP: {P}\nQ: {Q}\n")
-
     if not S:
         return []
 
@@ -15,11 +13,9 @@ def find_hull(S, P, Q, convex_hull):
     for p in S:
         if geom.point_line_distance(P, Q, C) < geom.point_line_distance(P, Q, p):
             C = p
-    print(f"Furthest point: {C}")
 
     # insert C between P and Q
     convex_hull.insert(convex_hull.index(P) + 1, C)
-    print(f"Convex hull till now: {convex_hull}")
     S1 = []
     S2 = []
 
@@ -34,8 +30,6 @@ def find_hull(S, P, Q, convex_hull):
             S1.append(p)
         else:
             S2.append(p)
-    print(f"New S1: {S1}")
-    print(f"New S2: {S2}")
 
     find_hull(S1, P, C, convex_hull)
     find_hull(S2, C, Q, convex_hull)
@@ -48,11 +42,9 @@ def Quick_hull(points):
     # find most left and most right points
     A = min(points)
     B = max(points)
-    print(f"A: {A}, B: {B}")
 
     # add them to convex hull
     convex_hull = [A, B]
-    print(f"Starting convex hull: {convex_hull}")
     S1 = []
     S2 = []
 
@@ -66,7 +58,6 @@ def Quick_hull(points):
         elif geom.orientation(A, B, p) > 0:
             S2.append(p)
 
-    print(f"S1: {S1}\nS2:{S2}")
     find_hull(S1, A, B, convex_hull)
     find_hull(S2, B, A, convex_hull)
 
