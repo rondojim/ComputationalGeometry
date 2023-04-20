@@ -33,3 +33,4 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
      We divide the points in two subsets with approximately equal sizes. We find recursively the convex hull for each subset and then merge the solutions.
      
      In order to merge the two convex hulls we compute the upper and lower tangents of the two convex polygon that were formed. Then the points that are "inside", between the two tangents, are discarded.
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/DivideAndConquerDemo.gif)
