@@ -53,3 +53,36 @@ def triangle_orientation(p, q, r, s):
     ):
         return 0
     return 1
+
+
+# brute force for computing convex hull
+def convex_hull_brute(points):
+    hull = set()
+
+    if len(points) > 3:
+        # if all points are on the same side of the line created from
+        #       p1 and p2 then add both points to hull
+        for p1 in points:
+            for p2 in points:
+                if p1 == p2:
+                    continue
+
+                neg_orient = pos_orient = 0
+                for p3 in points:
+                    if (p3 == p1) or (p3 == p2):
+                        continue
+                    orient = orientation(p1, p2, p3)
+                    neg_orient += 1 if orient < 0 else 0
+                    pos_orient += 1 if orient > 0 else 0
+
+                if (neg_orient == 0) or (pos_orient == 0):
+                    hull.add(p1)
+                    hull.add(p2)
+        hull = list(hull)
+    else:
+        hull = list(points)
+
+    origin = min(hull)
+    hull_sorted = sorted(hull, key=lambda p: (slope(origin, p), distance(origin, p)))
+
+    return hull_sorted

@@ -5,40 +5,6 @@ sys.path.append("../")
 from utilities import geometry_utils as geom
 
 
-def convex_hull_brute(points):
-    hull = set()
-
-    if len(points) > 3:
-        # if all points are on the same side of the line created from
-        #       p1 and p2 then add both points to hull
-        for p1 in points:
-            for p2 in points:
-                if p1 == p2:
-                    continue
-
-                neg_orient = pos_orient = 0
-                for p3 in points:
-                    if (p3 == p1) or (p3 == p2):
-                        continue
-                    orient = geom.orientation(p1, p2, p3)
-                    neg_orient += 1 if orient < 0 else 0
-                    pos_orient += 1 if orient > 0 else 0
-
-                if (neg_orient == 0) or (pos_orient == 0):
-                    hull.add(p1)
-                    hull.add(p2)
-        hull = list(hull)
-    else:
-        hull = list(points)
-
-    origin = min(hull)
-    hull_sorted = sorted(
-        hull, key=lambda p: (geom.slope(origin, p), geom.distance(origin, p))
-    )
-
-    return hull_sorted
-
-
 def divide(points):
     N = len(points)
     LN = int((N / 2) if (N % 2 == 0) else ((N + 1) / 2))
@@ -120,7 +86,7 @@ def DC_convex_hull(points):
     #       at least one hull will be a line or a point
     #       so we solve it with "brute force"
     if len(points) <= 5:
-        return convex_hull_brute(points)
+        return geom.convex_hull_brute(points)
 
     L, R = divide(points)
     left_hull = DC_convex_hull(L)
