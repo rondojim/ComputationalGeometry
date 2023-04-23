@@ -2,12 +2,11 @@ import sys
 
 sys.path.append("../")
 
-from utilities import geometry_utils as geom
-import utilities.testing_utils as tut
-
-import matplotlib.pyplot as plt
-import numpy as np
 from matplotlib.animation import FuncAnimation, PillowWriter
+import numpy as np
+import matplotlib.pyplot as plt
+import utilities.testing_utils as tut
+import utilities.geometry_utils as geom
 
 
 def divide(points):

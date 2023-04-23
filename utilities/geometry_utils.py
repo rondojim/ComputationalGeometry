@@ -68,6 +68,7 @@ def convex_hull_brute(points):
                     continue
 
                 neg_orient = pos_orient = 0
+                coll = False
                 for p3 in points:
                     if (p3 == p1) or (p3 == p2):
                         continue
@@ -75,7 +76,13 @@ def convex_hull_brute(points):
                     neg_orient += 1 if orient < 0 else 0
                     pos_orient += 1 if orient > 0 else 0
 
-                if (neg_orient == 0) or (pos_orient == 0):
+                    if orient == 0:
+                        # check if it is outside of segment
+                        if (distance(p1, p3) + distance(p2, p3)) > (
+                            distance(p2, p3) + 1e-6
+                        ):
+                            coll = True
+                if ((neg_orient == 0) or (pos_orient == 0)) and (coll == False):
                     hull.add(p1)
                     hull.add(p2)
         hull = list(hull)

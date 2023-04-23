@@ -60,6 +60,6 @@ def test_correctness_quick_hull():
 
 
 test_correctness_graham_scan()
-# test_correctness_jarvis()
-# test_correctness_divide_and_conquer()
-# test_correctness_quick_hull()
+test_correctness_jarvis()
+test_correctness_divide_and_conquer()
+test_correctness_quick_hull()
