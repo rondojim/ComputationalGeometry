@@ -52,6 +52,15 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
 
 ## Testing
 
-Every algorithm is tested on 8 different test cases. Four of them are created randomly and we just ensure that no point appears in the point set more than once. The rest of them are created using the same procedure except that for every point we insert in the point set, there is a probability that we will add two more points that will be collinear in respect to this point. The point sets have sizes $10^{3}, 10^{4}, 10^{5}, 10^{6}$. The output for each algorithm for each test cases is checked by ensuring that the resulting convex hull is really convex and that every other point is inside or on the convex hull.
+Every algorithm is tested on 8 different test cases. Four of them are created randomly and we just ensure that no point appears in the point set more than once. The rest of them are created using the same procedure except that for every point we insert in the point set, there is a probability that we will add two more points that will be collinear in respect to this point. Moreover, note that the divide and conquer algorithm was not tested with the same test cases as the other algorithms, but with ones where there are not two points with same x-coordinate present. 
 
-We used a python script to gather all the results and form a table with our experiments:
+The point sets have sizes $10^{3}, 10^{4}, 10^{5}, 10^{6}$ and the output for each algorithm for each test cases is checked by ensuring that the resulting convex hull is really convex and that every other point is inside or on the convex hull.
+
+We used a python script to gather all the results and form a table with our experiments. Every cell that is green means that the answer is correct. If it is red it means that the answer is wrong:
+
+![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments.png)
+
+
+Below we can see another table where we compare the algorithms again, but now the rest of the algorithms are tested on Divide and Conquer's test cases where no two points with the same x-coordinates are present.
+
+![Experiments]()
