@@ -79,7 +79,7 @@ def convex_hull_brute(points):
                     if orient == 0:
                         # check if it is outside of segment
                         if (distance(p1, p3) + distance(p2, p3)) > (
-                            distance(p2, p3) + 1e-6
+                            distance(p1, p2) + 1e-6
                         ):
                             coll = True
                 if ((neg_orient == 0) or (pos_orient == 0)) and (coll == False):
@@ -93,3 +93,52 @@ def convex_hull_brute(points):
     hull_sorted = sorted(hull, key=lambda p: (slope(origin, p), distance(origin, p)))
 
     return hull_sorted
+
+
+# checks if convex hull solution is correct
+def check_convex_hull(result, points):
+    correct = True
+
+    # for each point check if it is inside or on the polygon
+
+    for p in points:
+        if p in result:
+            continue
+        pos_orient = 0
+        neg_orient = 0
+        on_orient = 0
+
+        for i in range(len(result)):
+            j = (i + 1) % len(result)
+            if orientation(result[i], result[j], p) > 0:
+                pos_orient += 1
+            elif orientation(result[i], result[j], p) < 0:
+                neg_orient += 1
+            else:
+                on_orient += 1
+
+        if not (on_orient > 0 or (pos_orient * neg_orient == 0)):
+            correct = False
+            break
+
+    # check that the polygon is convex
+    # check that no collinear points appear
+    pos_orient = 0
+    neg_orient = 0
+    on_orient = 0
+
+    for i in range(len(result)):
+        j = (i + 1) % len(result)
+        k = (i + 2) % len(result)
+
+        if orientation(result[i], result[j], result[k]) > 0:
+            pos_orient += 1
+        elif orientation(result[i], result[j], result[k]) < 0:
+            neg_orient += 1
+        else:
+            on_orient += 1
+
+    if not (on_orient == 0 and (pos_orient * neg_orient == 0)):
+        correct = False
+
+    return correct

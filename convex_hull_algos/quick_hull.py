@@ -1,7 +1,8 @@
 import sys
 
 sys.path.append("../")
-from utilities import geometry_utils as geom
+
+import utilities.geometry_utils as geom
 
 
 def find_hull(S, P, Q, convex_hull):

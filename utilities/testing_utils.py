@@ -6,17 +6,20 @@ import matplotlib.pyplot as plt
 #       with integer coordinates
 def random_point_set(N, lb, ub, no_same_X):
     points_set = set()
-    Xs = set()
 
-    while len(points_set) < N:
-        x = random.randint(lb, ub)
+    xs = []
+    if no_same_X:
+        xs = random.sample(range(lb, ub + 1), N)
+    else:
+        xs = random.choices(range(lb, ub + 1), k=N)
+
+    for x in xs:
         y = random.randint(lb, ub)
 
-        if no_same_X == True and (x in Xs):
-            continue
+        while (x, y) in points_set:
+            y = random.randint(lb, ub)
 
         points_set.add((x, y))
-        Xs.add(x)
 
     return list(points_set)
 
@@ -27,32 +30,40 @@ def random_point_set(N, lb, ub, no_same_X):
 # low T -> higher probability
 
 
-def random_collinear(N, lb, ub, T):
+def random_collinear(N, lb, ub, T, no_same_X):
     points_set = set()
 
-    while len(points_set) < N:
-        collinear = random.randint(0, T)
-        x = random.randint(lb, ub)
+    xs = []
+    if no_same_X:
+        xs = random.sample(range(lb, ub + 1), N)
+    else:
+        xs = random.choices(range(lb, ub + 1), k=N)
+
+    for x in xs:
         y = random.randint(lb, ub)
+        while (x, y) in points_set:
+            y = random.randint(lb, ub)
 
         points_set.add((x, y))
+        collinear = random.randint(0, T)
 
-        if collinear == 0 and len(points_set) + 2 <= N:
+        if collinear == 0:
             dx = random.randint(int((ub - x) / 4), int((ub - x) / 2))
             dy = random.randint(int((ub - y) / 4), int((ub - y) / 2))
 
-            if random.randint(0, 2) == 0:
+            if dx == 0 and no_same_X == True:
+                continue
+
+            if random.randint(0, 2) == 0 and no_same_X == True:
                 dx = 0
-            elif random.randint(0, 2) == 0:
+            if random.randint(0, 2) == 0 and dx != 0:
                 dy = 0
 
-            x1 = x + dx
-            y1 = y + dy
-            x2 = x1 + dx
-            y2 = y1 + dy
-
-            points_set.add((x1, y1))
-            points_set.add((x2, y2))
+            for m in range(2):
+                if len(points_set) < N:
+                    xx = x + dx * (m + 1)
+                    yy = y + dy * (m + 1)
+                    points_set.add((x, y))
 
     return list(points_set)
 

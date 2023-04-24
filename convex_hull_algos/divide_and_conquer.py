@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("../")
 
-from utilities import geometry_utils as geom
+import utilities.geometry_utils as geom
 
 
 def divide(points):

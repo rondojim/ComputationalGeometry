@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("../")
 
-from utilities import geometry_utils as geom
+import utilities.geometry_utils as geom
 
 
 # computes convex hull of points using graham scan algorithm
@@ -22,7 +22,7 @@ def Graham_scan(points):
             continue
 
         # while last two points and p are clockwise, remove last point
-        while len(stack) >= 2 and geom.orientation(stack[-2], stack[-1], p) < 0:
+        while len(stack) >= 2 and geom.orientation(stack[-2], stack[-1], p) <= 0:
             stack.pop()
 
         stack.append(p)
