@@ -17,7 +17,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
   
   </p>
 
-  ![Demo Gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/GrahamScanDemo.gif)
+  ![Demo Gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/GrahamScanDemo.gif)
 
 - Jarvis (Gift wrapping)
   <p align="justify">
@@ -26,7 +26,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
     Time complexity: $O(nh)$, where $h$ is the number of points on the convex hull
   </p>
 
-  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/JarvisDemo.gif)
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/JarvisDemo.gif)
   
  - Divide and Conquer
    <p align="justify">
@@ -37,7 +37,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
      Time complexity: $O(nlogn)$
   </p>
   
-  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/DivideAndConquerDemo.gif)
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/DivideAndConquerDemo.gif)
   
 - Quick Hull
    <p align="justify">
@@ -48,7 +48,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
     Time complexity: Best case $O(nlogn)$ Worst case $O(n^{2})$
   </p>
   
-  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/Animation_depicting_the_quickhull_algorithm.gif)
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/Animation_depicting_the_quickhull_algorithm.gif)
 
 ## Testing
 
@@ -58,10 +58,10 @@ The point sets have sizes $10^{3}, 10^{4}, 10^{5}, 10^{6}$ and the output for ea
 
 We used a python script to gather all the results and form a table with our experiments. Every cell that is green means that the answer is correct. If it is red it means that the answer is wrong:
 
-![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments.png)
+![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments/tables/experiments.png)
 
 
 Below we can see another table where we compare the algorithms again, but now the rest of the algorithms are tested on Divide and Conquer's test cases where no two points with the same x-coordinates are present.
 
-![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experimenting_2.png)
+![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments/tables/experiments_2.png)
 
