@@ -47,9 +47,9 @@ for t in tqdm(range(num_cases)):
         algo = tup[0]
         func = tup[1]
 
-        cur_points = points
-        if algo == "Divide and Conquer":
-            cur_points = points_no_same_x
+        # cur_points = points
+        # if algo == "Divide and Conquer":
+        cur_points = points_no_same_x
 
         start_time = time.time()
         output = func(cur_points)
