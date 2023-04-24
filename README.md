@@ -52,16 +52,46 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
 
 ## Testing
 
+<p align = "justify">
 Every algorithm is tested on 8 different test cases. Four of them are created randomly and we just ensure that no point appears in the point set more than once. The rest of them are created using the same procedure except that for every point we insert in the point set, there is a probability that we will add two more points that will be collinear in respect to this point. Moreover, note that the divide and conquer algorithm was not tested with the same test cases as the other algorithms, but with ones where there are not two points with same x-coordinate present. 
 
 The point sets have sizes $10^{3}, 10^{4}, 10^{5}, 10^{6}$ and the output for each algorithm for each test cases is checked by ensuring that the resulting convex hull is really convex and that every other point is inside or on the convex hull.
 
 We used a python script to gather all the results and form a table with our experiments. Every cell that is green means that the answer is correct. If it is red it means that the answer is wrong:
+</p>
 
 ![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments/tables/experiments.png)
 
-
+<p align = "justify">
 Below we can see another table where we compare the algorithms again, but now the rest of the algorithms are tested on Divide and Conquer's test cases where no two points with the same x-coordinates are present.
+</p>
 
 ![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments/tables/experiments_2.png)
 
+<p align = "justify">
+We also present the plots created for each algorithm for the same test cases with 80 points and the list of the points that belong to the convex hull according to each algorithm.
+</p>
+
+- Graham Scan
+  
+  Convex hull: ```[(3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991), (39, 963)]```
+  
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/graham_scan.png)
+  
+- Jarvis
+  
+  Convex hull: ```[(3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991), (39, 963)]```
+   
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/jarvis.png)
+  
+- Divide and Conquer
+  
+  Convex hull: ```[(39, 963), (3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991)]``` (${\color{red}Note \space here \space that \space the \space list \space is \space just \space shifted \space by \space one}$)
+  
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/divide_and_conquer.png)
+  
+- Quick Hull
+
+  Convex hull: ```[(3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991), (39, 963)]```
+  
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/quick_hull.png)
