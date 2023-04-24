@@ -49,3 +49,4 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
   </p>
   
   ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/Animation_depicting_the_quickhull_algorithm.gif)
+
