@@ -63,4 +63,5 @@ We used a python script to gather all the results and form a table with our expe
 
 Below we can see another table where we compare the algorithms again, but now the rest of the algorithms are tested on Divide and Conquer's test cases where no two points with the same x-coordinates are present.
 
-![Experiments]()
+![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experimenting_2.png)
+
