@@ -47,4 +47,4 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
   
     Time complexity: Best case $O(nlogn)$ Worst case $O(n^{2})$
   </p>
-  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/DivideAndConquerDemo.gif)
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/Animation_depicting_the_quickhull_algorithm.gif)
