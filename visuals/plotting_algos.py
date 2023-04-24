@@ -11,46 +11,49 @@ import utilities.geometry_utils as geom
 import utilities.testing_utils as tut
 
 
-def test_correctness_graham_scan():
-    points = tut.random_collinear(80, 0, 1000, 0, False)
+def test_correctness_graham_scan(points):
     convex_hull = gs.Graham_scan(points)
+    print(convex_hull)
 
-    if geom.check_convex_hull(convex_hull, geom.convex_hull_brute(points)) == False:
+    if geom.check_convex_hull(convex_hull, points) == False:
         print("Graham Scan error")
     else:
         tut.plot_convex_hull(points, convex_hull, "Graham Scan")
 
 
-def test_correctness_jarvis():
-    points = tut.random_collinear(80, 0, 1000, 0, False)
+def test_correctness_jarvis(points):
     convex_hull = jr.Jarvis(points)
+    print(convex_hull)
 
-    if geom.check_convex_hull(convex_hull, geom.convex_hull_brute(points)) == False:
+    if geom.check_convex_hull(convex_hull, points) == False:
         print("Jarvis error")
     else:
         tut.plot_convex_hull(points, convex_hull, "Jarvis")
 
 
-def test_correctness_divide_and_conquer():
-    points = tut.random_collinear(80, 0, 1000, 0, True)
+def test_correctness_divide_and_conquer(points):
     convex_hull = dc.DC_convex_hull(points)
+    print(convex_hull)
 
-    if geom.check_convex_hull(convex_hull, geom.convex_hull_brute(points)) == False:
+    if geom.check_convex_hull(convex_hull, points) == False:
         print("Divide and Conquer error")
     else:
         tut.plot_convex_hull(points, convex_hull, "Divide and Conquer")
 
 
-def test_correctness_quick_hull():
-    points = tut.random_collinear(80, 0, 1000, 0, False)
+def test_correctness_quick_hull(points):
     convex_hull = qh.Quick_hull(points)
-    if geom.check_convex_hull(convex_hull, geom.convex_hull_brute(points)) == False:
+    print(convex_hull)
+
+    if geom.check_convex_hull(convex_hull, points) == False:
         print("Quick hull error")
     else:
         tut.plot_convex_hull(points, convex_hull, "Quick Hull")
 
 
-test_correctness_graham_scan()
-test_correctness_jarvis()
-test_correctness_divide_and_conquer()
-test_correctness_quick_hull()
+points = tut.random_collinear(80, 0, 1000, 0, True)
+
+test_correctness_graham_scan(points)
+test_correctness_jarvis(points)
+test_correctness_divide_and_conquer(points)
+test_correctness_quick_hull(points)
