@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append("../")
+
 import convex_hull_algos.graham_scan as gs
 import convex_hull_algos.jarvis as jr
 import convex_hull_algos.divide_and_conquer as dc
