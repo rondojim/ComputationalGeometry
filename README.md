@@ -50,3 +50,8 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
   
   ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/Animation_depicting_the_quickhull_algorithm.gif)
 
+## Testing
+
+Every algorithm is tested on 8 different test cases. Four of them are created randomly and we just ensure that no point appears in the point set more than once. The rest of them are created using the same procedure except that for every point we insert in the point set, there is a probability that we will add two more points that will be collinear in respect to this point. The point sets have sizes $10^{3}, 10^{4}, 10^{5}, 10^{6}$. The output for each algorithm for each test cases is checked by ensuring that the resulting convex hull is really convex and that every other point is inside or on the convex hull.
+
+We used a python script to gather all the results and form a table with our experiments:
