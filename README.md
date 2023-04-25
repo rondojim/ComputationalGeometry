@@ -95,3 +95,15 @@ We also present the plots created for each algorithm for the same test cases wit
   Convex hull: ```[(3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991), (39, 963)]```
   
   ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/quick_hull.png)
+  
+
+## 3D convex hull
+
+<p align="justify">
+  We use the ConvexHull function from scipy.spatial to compute the three dimensional convex hull of 50 points. This functions uses the Quich Hull algorithm. Below we can see the list of 50 random points in the three dimensional space and the plot for their convex hull.
+</p>
+
+Points: ```[(1, 69, 57), (4, 93, 45), (5, 69, 5), (7, 13, 42), (9, 60, 85), (9, 70, 21), (10, 46, 65), (17, 73, 17), (19, 42, 71), (20, 90, 74), (22, 56, 69), (23, 2, 9), (24, 87, 56), (28, 46, 46), (31, 65, 93), (32, 59, 3), (34, 17, 8), (39, 13, 51), (39, 61, 67), (39, 77, 52), (40, 26, 27), (42, 66, 39), (44, 8, 25), (44, 19, 76), (44, 56, 71), (45, 40, 77), (49, 37, 46), (50, 85, 1), (53, 24, 76), (53, 49, 2), (54, 82, 3), (56, 59, 98), (56, 80, 58), (57, 38, 66), (60, 54, 86), (62, 31, 67), (62, 100, 96), (65, 10, 73), (65, 67, 36), (66, 76, 81), (69, 49, 97), (69, 66, 100), (70, 68, 54), (71, 73, 6), (72, 89, 58), (78, 90, 61), (79, 19, 63), (83, 11, 26), (91, 81, 73), (94, 55, 46)]```
+
+![Plot]()
+  
