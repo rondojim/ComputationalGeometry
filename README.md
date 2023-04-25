@@ -107,9 +107,9 @@ Points: ```[(1, 69, 57), (4, 93, 45), (5, 69, 5), (7, 13, 42), (9, 60, 85), (9, 
 
 ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/3D_convex_hull.gif)
 
-
 ## Conclusion - 2D algorithms
 
 <p align = "justify">
 Regarding degenerate cases, Graham Scan, Jarvis (Gift Wrapping), and Quick Hull algorithms seem to behave correctly. They produce the correct output in both random cases (where collinear points might appear) and in cases where there are a lot of collinear points. On the other hand Divide and Conquer algorithm seems to enter an endless loop in cases where more than two points appear with the same x-coordinate, so we made sure to exit if the input has this property. Despite this, Divide and Conquer produces correct output in all other cases.
 </p>
+
