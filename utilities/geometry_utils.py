@@ -100,6 +100,8 @@ def check_convex_hull(result, points):
     correct = True
 
     # for each point check if it is inside or on the polygon
+    if len(result) < 3:
+        return False
 
     for p in points:
         if p in result:

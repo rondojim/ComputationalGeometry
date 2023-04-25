@@ -15,9 +15,9 @@ import utilities.geometry_utils as geom
 import utilities.testing_utils as tut
 
 
-# we will test the algorithms on 20 tests cases
-# 10 of them will be random
-# 10 of them will have many collinear points
+# we will test the algorithms on 8 tests cases
+# 4 of them will be random
+# 4 of them will have many collinear points
 
 results = {}
 algorithms = [
@@ -52,8 +52,9 @@ for t in tqdm(range(num_cases)):
         func = tup[1]
 
         cur_points = points
-        if algo == "Divide and Conquer":
-            cur_points = points_no_same_x
+        # uncomment this for Divide and Conquer to work
+        # if algo == "Divide and Conquer":
+        #     cur_points = points_no_same_x
 
         start_time = time.time()
         output = func(cur_points)
@@ -75,7 +76,6 @@ table = [
 ]
 
 for algorithm_name, result in results.items():
-    print(f"{algorithm_name} with results: {result}\n")
     row = [algorithm_name]
     for i in range(num_cases):
         cell = result[
@@ -84,7 +84,7 @@ for algorithm_name, result in results.items():
         if cell["is_correct"]:
             row.append(f"{cell['time']:.2f}s \u2713")
         else:
-            row.append(f"{cell['time']:.2f}s \u2717")
+            row.append(f"\u2717")
     table.append(row)
 
 # Plot the table as an image

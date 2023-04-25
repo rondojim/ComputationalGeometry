@@ -81,12 +81,26 @@ def merge_hulls(left_hull, right_hull):
     return convex_hull
 
 
+def check_same_x(points):
+    xs = set()
+    for p in points:
+        if p[0] in xs:
+            return True
+        xs.add(p[0])
+    return False
+
+
 def DC_convex_hull(points):
     # if we have less than 6 points, then if we divide
     #       at least one hull will be a line or a point
     #       so we solve it with "brute force"
     if len(points) <= 5:
         return geom.convex_hull_brute(points)
+
+    # check if there are multiple points with same x
+    # if there are return empty list
+    if check_same_x(points) == True:
+        return []
 
     L, R = divide(points)
     left_hull = DC_convex_hull(L)
