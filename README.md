@@ -17,7 +17,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
   
   </p>
 
-  ![Demo Gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/GrahamScanDemo.gif)
+  ![Demo Gif](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/gifs/GrahamScanDemo.gif)
 
 - Jarvis (Gift wrapping)
   <p align="justify">
@@ -26,7 +26,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
     Time complexity: $O(nh)$, where $h$ is the number of points on the convex hull
   </p>
 
-  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/JarvisDemo.gif)
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/gifs/JarvisDemo.gif)
   
  - Divide and Conquer
    <p align="justify">
@@ -37,7 +37,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
      Time complexity: $O(nlogn)$
   </p>
   
-  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/DivideAndConquerDemo.gif)
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/gifs/DivideAndConquerDemo.gif)
   
 - Quick Hull
    <p align="justify">
@@ -48,7 +48,7 @@ Implementing algorithms in Python from scratch for computing convex hull of poin
     Time complexity: Best case $O(nlogn)$ Worst case $O(n^{2})$
   </p>
   
-  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/Animation_depicting_the_quickhull_algorithm.gif)
+  ![Demo gif](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/gifs/Animation_depicting_the_quickhull_algorithm.gif)
 
 ## Testing
 
@@ -60,13 +60,13 @@ The point sets have sizes $10^{3}, 10^{4}, 10^{5}, 10^{6}$ and the output for ea
 We used a python script to gather all the results and form a table with our experiments. Every cell that is green means that the answer is correct. If it is red it means that the answer is wrong:
 </p>
 
-![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments/tables/experiments_1.png)
+![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/experiments/tables/experiments_1.png)
 
 <p align = "justify">
 Below we can see another table where we compare the algorithms again, but now all of the algorithms are tested on test cases where no two points with the same x-coordinates are present, in order to compare fairly the algorithms.
 </p>
 
-![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/experiments/tables/experiments_2.png)
+![Experiments](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/experiments/tables/experiments_2.png)
 
 <p align = "justify">
 We also present the plots created for each algorithm for the same test cases with 80 points and the list of the points that belong to the convex hull according to each algorithm.
@@ -76,25 +76,25 @@ We also present the plots created for each algorithm for the same test cases wit
   
   Convex hull: ```[(3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991), (39, 963)]```
   
-  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/graham_scan.png)
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/imgs/graham_scan.png)
   
 - Jarvis
   
   Convex hull: ```[(3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991), (39, 963)]```
    
-  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/jarvis.png)
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/imgs/jarvis.png)
   
 - Divide and Conquer
   
   Convex hull: ```[(39, 963), (3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991)]``` (${\color{red}Note \space here \space that \space the \space list \space is \space just \space shifted \space by \space one}$)
   
-  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/divide_and_conquer.png)
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/imgs/divide_and_conquer.png)
   
 - Quick Hull
 
   Convex hull: ```[(3, 651), (14, 351), (17, 331), (70, 181), (163, 61), (247, 20), (461, 17), (816, 15), (949, 30), (993, 114), (999, 985), (891, 991), (39, 963)]```
   
-  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/imgs/quick_hull.png)
+  ![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/imgs/quick_hull.png)
   
 
 ## 3D convex hull
@@ -105,7 +105,7 @@ We also present the plots created for each algorithm for the same test cases wit
 
 Points: ```[(1, 69, 57), (4, 93, 45), (5, 69, 5), (7, 13, 42), (9, 60, 85), (9, 70, 21), (10, 46, 65), (17, 73, 17), (19, 42, 71), (20, 90, 74), (22, 56, 69), (23, 2, 9), (24, 87, 56), (28, 46, 46), (31, 65, 93), (32, 59, 3), (34, 17, 8), (39, 13, 51), (39, 61, 67), (39, 77, 52), (40, 26, 27), (42, 66, 39), (44, 8, 25), (44, 19, 76), (44, 56, 71), (45, 40, 77), (49, 37, 46), (50, 85, 1), (53, 24, 76), (53, 49, 2), (54, 82, 3), (56, 59, 98), (56, 80, 58), (57, 38, 66), (60, 54, 86), (62, 31, 67), (62, 100, 96), (65, 10, 73), (65, 67, 36), (66, 76, 81), (69, 49, 97), (69, 66, 100), (70, 68, 54), (71, 73, 6), (72, 89, 58), (78, 90, 61), (79, 19, 63), (83, 11, 26), (91, 81, 73), (94, 55, 46)]```
 
-![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/visuals/gifs/3D_convex_hull.gif)
+![Plot](https://github.com/rondojim/ComputationalGeometry/blob/main/PartA/visuals/gifs/3D_convex_hull.gif)
 
 ## Conclusion - 2D algorithms
 
