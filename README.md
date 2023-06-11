@@ -151,13 +151,9 @@ The query is also very simple: 1) Given the min x, max x, min y, max y coordinat
 ![kd_tree_query](https://github.com/rondojim/ComputationalGeometry/assets/36564889/a28ddb80-c784-46e9-8755-0d150b7fcbfb)
 
 ### Experimenting
-<p align = "justify">
 We created a random list with 60 points: ```[(1, 15), (1, 7), (2, 8), (2, 17), (2, 4), (2, 6), (3, 1), (3, 8), (3, 20), (4, 4), (4, 13), (5, 6), (5, 15), (5, 5), (5, 11), (6, 18), (6, 17), (6, 4), (6, 19), (8, 18), (8, 5), (8, 1), (9, 5), (9, 17), (9, 19), (9, 6), (9, 15), (10, 6), (10, 14), (10, 20), (11, 12), (12, 1), (12, 19), (12, 15), (12, 18), (13, 5), (14, 10), (14, 19), (14, 12), (14, 18), (14, 15), (14, 20), (15, 13), (15, 10), (16, 1), (16, 7), (16, 19), (16, 15), (16, 2), (17, 17), (17, 13), (18, 20), (18, 3), (18, 6), (19, 6), (19, 18), (19, 2), (19, 16), (19, 13), (20, 9)]```
-</p>
 
-<p align = "justify">
 The orthogonal search algorithm for $min_x = 5, max_x = 13, min_y = 2, max_y = 17$ resulted in these points: ```[(11, 12), (5, 11), (5, 5), (9, 5), (6, 4), (8, 5), (9, 6), (5, 6), (10, 6), (5, 15), (6, 17), (9, 17), (9, 15), (10, 14), (13, 5), (12, 15)]```
-</p>
 
 <p align = "justify">
 In the following plot we can see the points with blue marker, the query rectangle in red, and with 'x' marker the points that the orthogonal search returned:
@@ -165,6 +161,4 @@ In the following plot we can see the points with blue marker, the query rectangl
 
 ![kd_tree_example](https://github.com/rondojim/ComputationalGeometry/assets/36564889/12714d41-eb0c-4b7d-80fb-f8e78ca987f2)
 
-<p align = "justify">
-As we can see the points with 'x' marker are only on or in the rectangle and, moreover, there are no points with no 'x' marker on or in the rectangle.
-</p>
+As we can see the points with 'x' marker are only on or in the rectangle and, moreover, there are no points with no 'x' marker on or in the rectangle. We also checked the correctness with ```check_correctness.py``` where we run 10 different test cases with number of points in ```[1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]``` and random boxes. The results were compared with the brute force solution in ```brute_force_checker.py``` and we got correct solution each time.
