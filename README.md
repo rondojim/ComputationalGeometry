@@ -116,3 +116,39 @@ Regarding degenerate cases, Graham Scan, Jarvis (Gift Wrapping), and Quick Hull 
 In terms of algorithm performance, Graham Scan's algorithm stands out with remarkable results, significantly outpacing the other three. Quick Hull and Divide and Conquer follow closely with similar run times, while the Jarvis algorithm has notably poor performance.
 </p>
 
+# Part B
+
+## Introduction
+<p align = "justify">
+In the first section we implement a kd-tree data structure from scartch for orthogonal search. The implementation is tested in a random generated set $P$ of 60 points. The results are checked with a brute force implementation. In the second section we illustrate the correspondence between the Delaunay triangulation and the Voronoi diagram for P.
+</p>
+
+## KD-tree
+<p align = "justify">
+The implementation of kd-tree for orthogonal search consists of two recursive functions. One for building the kd-tree and one for performing orthgonal search.
+</p>
+
+### Build
+<p align = "justify">
+The building is performed very simply: 1) Given a list of points we find the median based on current dimension 2) We build the kd-tree $L$ for the points on the left and the kd-tree $R$ for the points on the right based on the other dimension 3) The root of the current tree becomens the median with left subtree L and right subtree R.
+</p>
+
+![kd_tree](https://github.com/rondojim/ComputationalGeometry/assets/36564889/2e7800ee-0e9b-449c-8210-3c071bdc584d)
+
+The complexity of build is: $$T(n) = 2T(n/2) + \Theta(nlogn)$$
+
+Using *Master Theorem* we get: $$T \in \Theta(n log^{2} n)$$
+
+<p align = "justify">
+*Note*: The time complexity of build could be improved if we had precomputed the sorted list of points based on x coordinate and the sorted list of points based on y coordinate. Then the time complexity for build would be $\Theta(n logn)$.
+</p>
+
+### Query
+<p align = "justify">
+The query is also very simple: 1) Given the min x, max x, min y, max y coordinates we start from the root if the point there is inside the rectangle we add it to our solution 2) If left might intersect (based on current dimension) then recursively call left subtree 2) If right might intersect (based on current dimension) then resursively call right subtree
+</p>
+
+![kd_tree_query](https://github.com/rondojim/ComputationalGeometry/assets/36564889/a28ddb80-c784-46e9-8755-0d150b7fcbfb)
+
+
+
