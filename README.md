@@ -162,3 +162,15 @@ In the following plot we can see the points with blue marker, the query rectangl
 ![kd_tree_example](https://github.com/rondojim/ComputationalGeometry/assets/36564889/12714d41-eb0c-4b7d-80fb-f8e78ca987f2)
 
 As we can see the points with 'x' marker are only on or in the rectangle and, moreover, there are no points with no 'x' marker on or in the rectangle. We also checked the correctness with ```check_correctness.py``` where we run 10 different test cases with number of points in ```[1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]``` and random boxes. The results were compared with the brute force solution in ```brute_force_checker.py``` and we got correct solution each time.
+
+## Delaunay triangulation and Voronoi diagram
+
+We run pythons ```scipy.spatial``` functions ```Delaunay``` and ```Voronoi```. We used ```plt.triplot``` to draw an unstructured triangular grid as lines by using the simplices from the Delaunay triangulation. Moreover we used the function ```voronoi_plot_2d``` to plot the given Voronoi diagram in 2D. Here is the result for 10 points ```[[26 30] [58 59] [59 19] [64 17] [8 54] [33 66] [45 15] [14 18] [57 34] [74 50]]```:
+
+![delaunay_voronoi](https://github.com/rondojim/ComputationalGeometry/assets/36564889/6dbedcff-152a-4904-8ff2-5226e8081008)
+
+### Complexity
+
+<p align = "justify">
+Computing the Voronoi digram in $\mathbb{R}^{d}$ is done in $O(nlogn + n^{\lceil n/2 \rceil}) and computing the Delaunay triangulation is done in $O(nlogn)$. So, increasing the number of points does not dramatically increase the complexity. However, by increasing the dimensions the complexity is increasing exponentially.
+</p>
