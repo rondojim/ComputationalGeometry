@@ -172,5 +172,5 @@ We run pythons ```scipy.spatial``` functions ```Delaunay``` and ```Voronoi```. W
 ### Complexity
 
 <p align = "justify">
-Computing the Voronoi digram in $\mathbb{R}^{d}$ is done in $O(nlogn + n^{\lceil n/2 \rceil}) and computing the Delaunay triangulation is done in $O(nlogn)$. So, increasing the number of points does not dramatically increase the complexity. However, by increasing the dimensions the complexity is increasing exponentially.
+Computing the Voronoi digram in $\mathbb{R}^{d}$ is done in $O(nlogn + n^{\lceil n/2 \rceil})$ and computing the Delaunay triangulation is done in $O(nlogn)$. So, increasing the number of points does not dramatically increase the complexity. However, by increasing the dimensions the complexity is increasing exponentially.
 </p>
